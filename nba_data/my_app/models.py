@@ -17,6 +17,7 @@ class Player(models.Model):
     steals = models.DecimalField(max_digits=3, decimal_places=1)
     blocks = models.DecimalField(max_digits=3, decimal_places=1)
     turnovers = models.DecimalField(max_digits=3, decimal_places=1)
+    team = models.CharField(max_length=3)
 
     def __str__(self):
         name = [self.first_name, self.last_name]
