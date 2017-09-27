@@ -21,4 +21,5 @@ class Player(models.Model):
 
     def __str__(self):
         name = [self.first_name, self.last_name]
-        return ' '.join(name)
+        team = self.team
+        return ' '.join(name) + '--' + team
