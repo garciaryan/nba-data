@@ -1,0 +1,26 @@
+<html lang="en">
+    <head>
+        <title>Stats</title>
+    </head>
+    <body>
+    {% for player in players %}
+        <div>
+          <h1>{{ player.first_name }} {{player.last_name }}</h1>
+          <h3>{{ player.team }}</h3>
+          <p>Points: {{ player.points }}</p>
+          <p>Assists: {{ player.assists }}</p>
+          <p>Rebounds: {{ player.rebounds }}</p>
+          <p>Steals: {{ player.steals }}</p>
+          <p>Blocks: {{ player.blocks }}</p>
+          <p>Turnovers: {{ player.turnovers }}</p>
+          <p>FGM: {{ player.fgm }}</p>
+          <p>FGA: {{ player.fga }}</p>
+          <p>3PM: {{ player.threes_m }}</p>
+          <p>3PA: {{ player.threes_a }}</p>
+          <p>Minutes: {{ player.minutes }}</p>
+          {% empty %}
+          <h3>Sorry, there are no players by that name.</h3>
+        </div>
+    {% endfor %}
+    </body>
+</html>
