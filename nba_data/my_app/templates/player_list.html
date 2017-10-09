@@ -1,8 +1,13 @@
+{% load compile_static %}
+{% load static %}
+
 <html lang="en">
-    <head>
-        <title>Stats</title>
-    </head>
+  <head>
+    <title>Stats</title>
+    <link rel="stylesheet" href="{% static "styles.less" | compile %}">
+  </head>
     <body>
+    {% inlinecompile %}
     {% for player in players %}
         <div>
           <h1>{{ player.first_name }} {{player.last_name }}</h1>
@@ -22,5 +27,10 @@
           <h3>Sorry, there are no players by that name.</h3>
         </div>
     {% endfor %}
+      <label for="player">
+        <input type="text"
+          placeholder="Search for a player">
+      </label>
+    {% endinlinecompile %}
     </body>
 </html>
