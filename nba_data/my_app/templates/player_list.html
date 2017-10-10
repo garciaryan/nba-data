@@ -1,15 +1,14 @@
 {% load compile_static %}
-{% load static %}
+{% load static from staticfiles%}
 
 <html lang="en">
   <head>
     <title>Stats</title>
-    <link rel="stylesheet" href="{% static "styles.less" | compile %}">
+    <link rel="stylesheet" type="text/css" href="{% static "styles.less" | compile %}">
   </head>
     <body>
-    {% inlinecompile %}
     {% for player in players %}
-        <div>
+        <div class="player">
           <h1>{{ player.first_name }} {{player.last_name }}</h1>
           <h3>{{ player.team }}</h3>
           <p>Points: {{ player.points }}</p>
@@ -23,14 +22,16 @@
           <p>3PM: {{ player.threes_m }}</p>
           <p>3PA: {{ player.threes_a }}</p>
           <p>Minutes: {{ player.minutes }}</p>
+        </div>
           {% empty %}
           <h3>Sorry, there are no players by that name.</h3>
-        </div>
     {% endfor %}
-      <label for="player">
-        <input type="text"
-          placeholder="Search for a player">
-      </label>
-    {% endinlinecompile %}
+        <div class="search">
+          <label for="player">
+           <input type="text"
+              placeholder="Search for a player.">
+          </label>
+        </div>
+    <script src="../styles/less.js"></script>
     </body>
 </html>
