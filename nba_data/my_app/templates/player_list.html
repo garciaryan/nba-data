@@ -11,25 +11,25 @@
         <div class="player">
           <h1>{{ player.first_name }} {{player.last_name }}</h1>
           <h3>{{ player.team }}</h3>
-          <p>Points: {{ player.points }}</p>
-          <p>Assists: {{ player.assists }}</p>
-          <p>Rebounds: {{ player.rebounds }}</p>
-          <p>Steals: {{ player.steals }}</p>
-          <p>Blocks: {{ player.blocks }}</p>
-          <p>Turnovers: {{ player.turnovers }}</p>
-          <p>FGM: {{ player.fgm }}</p>
-          <p>FGA: {{ player.fga }}</p>
-          <p>3PM: {{ player.threes_m }}</p>
-          <p>3PA: {{ player.threes_a }}</p>
-          <p>Minutes: {{ player.minutes }}</p>
+          <p>Points: <strong>{{ player.points }}</strong></p>
+          <p>Assists: <strong>{{ player.assists }}</strong></p>
+          <p>Rebounds: <strong>{{ player.rebounds }}</strong></p>
+          <p>Steals: <strong>{{ player.steals }}</strong></p>
+          <p>Blocks: <strong>{{ player.blocks }}</strong></p>
+          <p>Turnovers: <strong>{{ player.turnovers }}</strong></p>
+          <p>FGM: <strong>{{ player.fgm }}</strong></p>
+          <p>FGA: <strong>{{ player.fga }}</strong></p>
+          <p>3PM: <strong>{{ player.threes_m }}</strong></p>
+          <p>3PA: <strong>{{ player.threes_a }}</strong></p>
+          <p>Minutes: <strong>{{ player.minutes }}</strong></p>
         </div>
           {% empty %}
           <h3>Sorry, there are no players by that name.</h3>
     {% endfor %}
         <div class="search">
           <label for="player">
-           <input type="text"
-              placeholder="Search for a player.">
+            <input type="text"
+                   placeholder="Search for a player.">
           </label>
         </div>
     <script src="../styles/less.js"></script>
