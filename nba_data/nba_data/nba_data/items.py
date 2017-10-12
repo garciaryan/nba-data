@@ -8,7 +8,18 @@
 import scrapy
 
 
-class NbaDataItem(scrapy.Item):
+class PlayerStats(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    points = scrapy.Field()
+    assists = scrapy.Field()
+    rebounds = scrapy.Field()
+    steals = scrapy.Field()
+    blocks = scrapy.Field()
+    turnovers = scrapy.Field()
+    fgm = scrapy.Field()
+    fga = scrapy.Field()
+    threepm = scrapy.Field()
+    threepa = scrapy.Field()
+    minutes = scrapy.Field()
