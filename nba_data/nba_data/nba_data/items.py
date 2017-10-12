@@ -23,3 +23,5 @@ class PlayerStats(scrapy.Item):
     threepm = scrapy.Field()
     threepa = scrapy.Field()
     minutes = scrapy.Field()
+    pass
+
