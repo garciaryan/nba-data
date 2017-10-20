@@ -1,8 +1,7 @@
 import requests
 import json
 import sys
-import urllib
-from bs4 import BeautifulSoup
+
 
 print('Making request...')
 urldict = {
@@ -18,7 +17,7 @@ urldict = {
     'GameSegment': '',
     'Height': '',
     'LastNGames': '0',
-    'LeagueID': '0',
+    'LeagueID': '00',
     'Location': '',
     'MeasureType': 'Base',
     'Month': '0',
@@ -32,9 +31,9 @@ urldict = {
     'PlayerPosition': '',
     'PlusMinus': 'N',
     'Rank': 'N',
-    'Season': '2015' + '-' + '16',
+    'Season': '',
     'SeasonSegment': '',
-    'SeasonType': 'Regular+Season',
+    'SeasonType': '',
     'ShotClockRange': '',
     'StarterBench': '',
     'TeamID': '0',
@@ -49,18 +48,16 @@ def get_stats(**kwargs):
     payload = urldict.copy()
     payload.update(kwargs)
     r = requests.get(
-        'https://stats.nba.com/stats/leaguedashplayerstats?', params=payload, headers=headers)
+        'http://stats.nba.com/stats/leaguedashplayerstats?', params=payload, headers=headers)
     print(r.url)
     try:
-        # soup = BeautifulSoup(r, 'html.parser')
         data = json.loads(r.content)
         with open('stats.json', 'w') as f:
             json.dump(data, f)
-        # print(json.dumps(data, indent=2, sort_keys=True))
 
     except requests.exceptions.ConnectionError as err:
         print('There was a problem getting the requested url. ERROR: ', err, r.status_code)
         sys.exit(1)
 
 
-get_stats()
+get_stats(Season='2016-17', SeasonType='Regular Season')
