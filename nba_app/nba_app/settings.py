@@ -56,7 +56,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'nba_data.urls'
+ROOT_URLCONF = 'nba_app.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'nba_data.wsgi.application'
+WSGI_APPLICATION = 'nba_app.wsgi.application'
 
 
 # Database
