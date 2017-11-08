@@ -51,7 +51,7 @@ def get_stats(**kwargs):
         'http://stats.nba.com/stats/leaguedashplayerstats?', params=payload, headers=headers)
     print(r.url)
     try:
-        data = json.loads(r.content)
+        data = r.json()
         with open('stats.json', 'w') as f:
             json.dump(data, f)
 
@@ -60,4 +60,6 @@ def get_stats(**kwargs):
         sys.exit(1)
 
 
-get_stats(Season='2016-17', SeasonType='Regular Season')
+get_stats(Season='2017-18', SeasonType='Regular Season')
+
+def
