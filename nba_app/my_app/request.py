@@ -61,5 +61,3 @@ def get_stats(**kwargs):
 
 
 get_stats(Season='2017-18', SeasonType='Regular Season')
-
-def
