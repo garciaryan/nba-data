@@ -1,6 +1,6 @@
+import sys
 import requests
 import json
-import sys
 from models import Player
 
 
