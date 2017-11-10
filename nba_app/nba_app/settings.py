@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'static_precompiler',
-    'nba_app',
+    'my_app',
 )
 
 MIDDLEWARE_CLASSES = (
