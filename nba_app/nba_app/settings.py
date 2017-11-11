@@ -42,7 +42,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'static_precompiler',
-    'my_app',
+    'debug_toolbar',
+    'nba_app.my_app',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,6 +55,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ROOT_URLCONF = 'nba_app.urls'
@@ -61,7 +63,7 @@ ROOT_URLCONF = 'nba_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['nba_app/my_app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +107,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
-    '../my_app/static',
+    'my_app/static',
     os.path.join(
         os.path.dirname(__file__),
         'static',

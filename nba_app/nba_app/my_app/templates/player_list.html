@@ -9,19 +9,19 @@
     <body>
     {% for player in players %}
         <div class="player">
-          <h1>{{ player.first_name }} {{player.last_name }}</h1>
-          <h3>{{ player.team }}</h3>
-          <p>Points: <strong>{{ player.points }}</strong></p>
-          <p>Assists: <strong>{{ player.assists }}</strong></p>
-          <p>Rebounds: <strong>{{ player.rebounds }}</strong></p>
-          <p>Steals: <strong>{{ player.steals }}</strong></p>
-          <p>Blocks: <strong>{{ player.blocks }}</strong></p>
-          <p>Turnovers: <strong>{{ player.turnovers }}</strong></p>
+          <h1>{{ player.player_name }}</h1>
+          <h3>{{ player.team_abbreviation }}</h3>
+          <p>Points: <strong>{{ player.pts }}</strong></p>
+          <p>Assists: <strong>{{ player.ast }}</strong></p>
+          <p>Rebounds: <strong>{{ player.reb }}</strong></p>
+          <p>Steals: <strong>{{ player.stl }}</strong></p>
+          <p>Blocks: <strong>{{ player.blk }}</strong></p>
+          <p>Turnovers: <strong>{{ player.tov }}</strong></p>
           <p>FGM: <strong>{{ player.fgm }}</strong></p>
           <p>FGA: <strong>{{ player.fga }}</strong></p>
-          <p>3PM: <strong>{{ player.threes_m }}</strong></p>
-          <p>3PA: <strong>{{ player.threes_a }}</strong></p>
-          <p>Minutes: <strong>{{ player.minutes }}</strong></p>
+          <p>3PM: <strong>{{ player.fg3m }}</strong></p>
+          <p>3PA: <strong>{{ player.fg3a }}</strong></p>
+          <p>Minutes: <strong>{{ player.min }}</strong></p>
         </div>
           {% empty %}
           <h3>Sorry, there are no players by that name.</h3>
