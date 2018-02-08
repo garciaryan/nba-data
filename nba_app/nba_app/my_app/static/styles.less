@@ -5,6 +5,10 @@ body {
   height: 100%;
   background-color: #f8f8f8;
   font-family: 'Raleway', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .player {
@@ -16,14 +20,13 @@ body {
 
 .search {
   position: relative;
-  left: 62%;
-  bottom: 50%;
-  width: 100%;
 }
 
 input {
-  width: 30%;
-  height: 6%;
   font-size: 18px;
-  border-radius: 1%;
+}
+
+.no-results {
+  text-align: center;
+  position: relative;
 }
