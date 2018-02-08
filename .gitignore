@@ -1,4 +1,6 @@
 *.idea
+.nbaenv
+.vagrant
 .env
 *.DS_Store
 node_modules
